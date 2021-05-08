@@ -3,7 +3,8 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import messagebox as mess
 import tkinter.simpledialog as tsd
-import cv2,os
+import os
+from cv2 import cv2
 import csv
 import numpy as np
 from PIL import Image
@@ -256,7 +257,7 @@ def TrackImages():
     msg = ''
     i = 0
     j = 0
-    recognizer = cv2.createLBPHFaceRecognizer() #cv2.face.LBPHFaceRecognizer_create()  
+    recognizer = cv2.face.LBPHFaceRecognizer_create() #cv2.createLBPHFaceRecognizer()   
     exists3 = os.path.isfile("TrainingImageLabel\Trainner.yml")
     if exists3:
         recognizer.read("TrainingImageLabel\Trainner.yml")
